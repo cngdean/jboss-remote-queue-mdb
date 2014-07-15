@@ -78,7 +78,7 @@ public class QueueExample
                 "org.jnp.interfaces.NamingContextFactory" );
         p.put( Context.URL_PKG_PREFIXES,
                 " org.jboss.naming:org.jnp.interfaces" );
-        p.put( Context.PROVIDER_URL, "jnp://localhost:1099" );
+        p.put( Context.PROVIDER_URL, "jnp://localhost:1099");//jnp://eads:7112" );
         return new javax.naming.InitialContext( p );
     }
 }

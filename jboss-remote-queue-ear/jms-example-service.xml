@@ -1,0 +1,17 @@
+<server>
+    <mbean code="org.jboss.jms.jndi.JMSProviderLoader"
+           name="jboss.messaging:service=JMSProviderLoader,name=RemoteJMSProvider"><!--,server=localhost"> -->
+        <attribute name="ProviderName">RemoteJMSProvider</attribute>
+        <attribute name="ProviderAdapterClass">org.jboss.jms.jndi.JNDIProviderAdapter</attribute>
+        <!-- The queue connection factory -->
+        <attribute name="QueueFactoryRef">XAConnectionFactory</attribute>
+        <!-- The topic factory -->
+        <attribute name="TopicFactoryRef">XAConnectionFactory</attribute>
+        <!-- Connect to JNDI on the host REMOTE_QUEUE_MACHINE_NAME port REMOTE_QUEUE_MACHINE_JNDI_PORT -->
+        <attribute name="Properties">
+            java.naming.factory.initial=org.jnp.interfaces.NamingContextFactory
+            java.naming.factory.url.pkgs=org.jnp.interfaces
+            java.naming.provider.url=jnp://localhost:1099
+        </attribute>
+    </mbean>
+</server>

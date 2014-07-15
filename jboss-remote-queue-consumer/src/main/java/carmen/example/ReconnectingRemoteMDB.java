@@ -15,7 +15,7 @@ import javax.jms.TextMessage;
                 @ActivationConfigProperty( propertyName = "destinationType", propertyValue = "javax.jms.Queue" ),
                 @ActivationConfigProperty( propertyName = "destination", propertyValue = "queue/queueA" ),
                 @ActivationConfigProperty( propertyName = "providerAdapterJNDI", propertyValue = "java:/RemoteJMSProvider" ),
-                @ActivationConfigProperty( propertyName = "reconnectAttempts", propertyValue = "600" ),
+                @ActivationConfigProperty( propertyName = "reconnectAttempts", propertyValue = "6000" ),
                 @ActivationConfigProperty( propertyName = "reconnectInterval", propertyValue = "5" )
         } )
 public class ReconnectingRemoteMDB implements MessageDrivenBean, MessageListener

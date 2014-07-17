@@ -1,4 +1,4 @@
-set JBOSS_CONSUMER_DEPLOY_LOCATION=%HOME%\workspace\jboss_testing\jboss-eap-5.1.2_consumer\jboss-as\server\default\deploy
+set JBOSS_CONSUMER_DEPLOY_LOCATION=%HOME%\workspace\jboss_testing\jboss-eap-patched-5.1.2_consumer\jboss-as\server\default\deploy
 
 copy /Y jms-example-service.xml %JBOSS_CONSUMER_DEPLOY_LOCATION%
 cd ..\jboss-remote-queue-consumer\

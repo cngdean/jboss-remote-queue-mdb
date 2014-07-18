@@ -6,9 +6,10 @@ import java.util.Properties;
 
 public class QueueExample
 {
-    public void example() throws Exception
+    public String example() throws Exception
     {
         String destinationName = "queue/queueA";
+        String humanNumber = "Error, no human generated";
 
         Context ic = null;
         ConnectionFactory cf = null;
@@ -26,9 +27,9 @@ public class QueueExample
             MessageProducer publisher = session.createProducer( queue );
             connection.start();
 
-            String s = "Greetings Human Number " + Math.random();
-            System.out.println( "Sending: " + s );
-            TextMessage message = session.createTextMessage( s );
+            humanNumber = "Greetings Human Number " + Math.random();
+            System.out.println( "Sending: " + humanNumber );
+            TextMessage message = session.createTextMessage( humanNumber );
             publisher.send( message );
         }
         finally
@@ -47,6 +48,7 @@ public class QueueExample
 
             closeConnection( connection );
         }
+        return humanNumber;
     }
 
     private void closeConnection( Connection con )

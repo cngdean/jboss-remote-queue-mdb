@@ -1,6 +1,5 @@
 set JBOSS_PRODUCER_DEPLOY_LOCATION=%HOME%\workspace\jboss_testing\jboss-eap-patched-5.1.2_producer\jboss-as\server\default\deploy
 
-
 copy /Y jms-example-service.xml %JBOSS_PRODUCER_DEPLOY_LOCATION%
 
 call mvn clean package

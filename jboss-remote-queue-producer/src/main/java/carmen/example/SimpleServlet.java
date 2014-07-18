@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class SimpleServlet extends HttpServlet
 {
@@ -13,15 +14,14 @@ public class SimpleServlet extends HttpServlet
             HttpServletResponse response )
             throws ServletException, IOException
     {
+        PrintWriter out = response.getWriter();
         try
         {
-            new QueueExample().example();
+            out.println(new QueueExample().example());
         }
         catch ( Exception e )
         {
             e.printStackTrace();
         }
     }
-
-
 }
